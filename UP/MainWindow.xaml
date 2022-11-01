@@ -9,9 +9,9 @@
     <Grid>
         <Label Content="Добро пожаловать в систему учета:)" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Top" FontFamily="Bahnschrift Condensed" FontSize="24" FontWeight="Bold"/>
         <Label Content="Введите данные учетной записи:" HorizontalAlignment="Center" Margin="100" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Center" Margin="0,148,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Password" HorizontalAlignment="Center" Margin="0,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>

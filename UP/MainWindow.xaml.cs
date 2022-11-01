@@ -24,5 +24,27 @@ namespace UP
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //List<Users> newlist;
+            using (TehnikaEntities1 te = new TehnikaEntities1())
+            {
+
+                if (te.Users.Any(i => i.Login == Login.Text && i.Password == Password.Text))
+                {
+                    Rukovoditel ruk = new Rukovoditel();
+                    ruk.Show();
+                }
+                else if (te.Users.Any(i => i.Login != Login.Text))
+                {
+                    MessageBox.Show("Вы ввели неверный логин(");
+                }
+                else if (te.Users.Any(i => i.Password != Password.Text))
+                {
+                    MessageBox.Show("Пароль неверный(");
+                }
+            }
+        }
     }
 }

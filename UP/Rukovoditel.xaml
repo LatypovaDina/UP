@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:UP"
         mc:Ignorable="d"
         Title="Rukovoditel" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#FF778D9E">
+        <DataGrid x:Name="TehnGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
+                    ItemsSource="{Binding}" Margin="13,13,43,191"
+                    RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="IdColumn" Binding="{Binding Id}"
+                                    Header="Инвентарный номер" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}"
+                                    Header="Название" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="modelColumn" Binding="{Binding Model}"
+                                    Header="Модель" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="DateColumn" Binding="{Binding Date}"
+                                    Header="Дата приобретения" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="PriceColumn" Binding="{Binding Price}"
+                                    Header="Стоимость" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="roomColumn" Binding="{Binding Room}"
+                                    Header="Комната" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
