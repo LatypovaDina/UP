@@ -30,11 +30,12 @@ namespace UP
             PodrazdelGrid.DataContext = te.Unit.ToList(); 
 
         }
-
+        /// <summary>
+        /// Обработка нажатия кнопки "Назад"
+        /// </summary>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-
         }
 
         private void PodrazdelGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -51,7 +52,9 @@ namespace UP
         {
 
         }
-
+        /// <summary>
+        /// Обработка нажатия кнопки изменения данных о подразделении
+        /// </summary>
         private void save_Click(object sender, RoutedEventArgs e)
         {
             try

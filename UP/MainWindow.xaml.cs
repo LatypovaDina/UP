@@ -24,15 +24,18 @@ namespace UP
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Обработка нажатия на кнопку "Войти"
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //List<Users> newlist;
+            
             using (TehnikaEntities2 te = new TehnikaEntities2())
             {
 
                 if (te.Users.Any(i => i.Login == Login.Text && i.Password == Password.Text && i.Role == "admin"))
                 {
+                    //Если роль - Админ, то открываем страницу для админа
                     Rukovoditel ruk = new Rukovoditel();
                     ruk.Show();
                     this.Close();
@@ -40,6 +43,7 @@ namespace UP
 
                 else if (te.Users.Any(i => i.Login == Login.Text && i.Password == Password.Text && i.Role == "rab"))
                 {
+                    //Если роль - rab, то открываем страницу для обычного работника
                     Mat_otv mat = new Mat_otv();
                     mat.Show();
                     this.Close();

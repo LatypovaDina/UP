@@ -20,14 +20,19 @@ namespace UP
     /// </summary>
     public partial class Mat_otv : Window
     {
-        public TehnikaEntities2 te = new TehnikaEntities2();
+        /// <summary>
+        /// При открытии данной страницы сразу загружаются данные в таблицу
+        /// </summary>
         public Mat_otv()
         {
             InitializeComponent();
-            te.Technics.Load(); // загружаем данные
-            TehnGrid.DataContext = te.Technics.ToList(); // устанавливаем привязку к кэшу
+            TehnikaEntities2 te = new TehnikaEntities2();
+            te.Technics.Load(); 
+            TehnGrid.DataContext = te.Technics.ToList(); 
         }
-
+        /// <summary>
+        /// Обработка нажатия кнопки выхода из аккаунта
+        /// </summary>
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             
@@ -35,18 +40,22 @@ namespace UP
             mw.Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Обработка нажатия кнопки для перехода в подразделения
+        /// </summary>
         private void razdel_Click(object sender, RoutedEventArgs e)
         {
             Podrazdeleniye pod = new Podrazdeleniye();
             pod.Show();
         }
-
+        /// <summary>
+        /// Обработка нажатия кнопки для обновления данных в таблице
+        /// </summary>
         private void update_Click(object sender, RoutedEventArgs e)
         {
-            te = new TehnikaEntities2();
-            te.Technics.Load(); // загружаем данные
-            TehnGrid.DataContext = te.Technics.ToList(); // устанавливаем привязку к кэшу
+            TehnikaEntities2 te = new TehnikaEntities2();
+            te.Technics.Load(); 
+            TehnGrid.DataContext = te.Technics.ToList();
         }
 
         private void TehnGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
