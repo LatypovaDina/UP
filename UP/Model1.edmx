@@ -134,7 +134,7 @@
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TehnikaEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TehnikaEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Person" EntityType="Self.Person" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Technics" EntityType="Self.Technics" />
@@ -147,7 +147,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище TehnikaModelContainer" CdmEntityContainer="TehnikaEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TehnikaModelContainer" CdmEntityContainer="TehnikaEntities2">
           <EntitySetMapping Name="Person">
             <EntityTypeMapping TypeName="TehnikaModel.Person">
               <MappingFragment StoreEntitySet="Person">

@@ -13,10 +13,10 @@ namespace UP
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TehnikaEntities1 : DbContext
+    public partial class TehnikaEntities2 : DbContext
     {
-        public TehnikaEntities1()
-            : base("name=TehnikaEntities1")
+        public TehnikaEntities2()
+            : base("name=TehnikaEntities2")
         {
         }
     

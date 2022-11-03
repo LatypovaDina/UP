@@ -28,14 +28,23 @@ namespace UP
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //List<Users> newlist;
-            using (TehnikaEntities1 te = new TehnikaEntities1())
+            using (TehnikaEntities2 te = new TehnikaEntities2())
             {
 
-                if (te.Users.Any(i => i.Login == Login.Text && i.Password == Password.Text))
+                if (te.Users.Any(i => i.Login == Login.Text && i.Password == Password.Text && i.Role == "admin"))
                 {
                     Rukovoditel ruk = new Rukovoditel();
                     ruk.Show();
+                    this.Close();
                 }
+
+                else if (te.Users.Any(i => i.Login == Login.Text && i.Password == Password.Text && i.Role == "rab"))
+                {
+                    Mat_otv mat = new Mat_otv();
+                    mat.Show();
+                    this.Close();
+                }
+                
                 else if (te.Users.Any(i => i.Login != Login.Text))
                 {
                     MessageBox.Show("Вы ввели неверный логин(");
